@@ -29,7 +29,7 @@ The **Seismic Hub Identification** project is a full-stack web application desig
 │-- deployment/         # GitHub deployment setup
 ```
 
-## Installation
+## Installations
 ### Prerequisites
 - **Python 3.8+** (for backend)
 - **Node.js 16+** (for frontend)
