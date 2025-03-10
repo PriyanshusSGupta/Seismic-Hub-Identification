@@ -1,9 +1,9 @@
-# Seismic Hub Identification
+# **Seismic Hub Identification**
 
-## Overview
+## **Overview**
 The **Seismic Hub Identification** project is a full-stack web application designed to analyze and visualize the central hub in a seismic network. By computing node centrality based on distinct shortest paths, this tool helps researchers and geophysicists better understand seismic connectivity and activity.
 
-## Features
+## **Features**
 - **Data Upload:** Users can upload their seismic datasets to the `/data` folder.
 - **Network Centrality Analysis:** Identifies key nodes in the seismic network.
 - **Interactive Visualization:** Uses D3.js to display seismic connectivity.
@@ -11,7 +11,7 @@ The **Seismic Hub Identification** project is a full-stack web application desig
 - **React Frontend:** Provides an intuitive user interface.
 - **Modular & Extendable:** Easily adaptable for additional features and enhancements.
 
-## File Structure
+## **File Structure**
 ```
 / (Root)
 │-- backend/            # Flask API backend
@@ -29,13 +29,13 @@ The **Seismic Hub Identification** project is a full-stack web application desig
 │-- deployment/         # GitHub deployment setup
 ```
 
-## Installations
-### Prerequisites
+## **Installations**
+### **Prerequisites**
 - **Python 3.8+** (for backend)
 - **Node.js 16+** (for frontend)
 - **Docker** (optional, for containerized deployment)
 
-### Backend Setup
+### **Backend Setup**
 ```sh
 cd backend
 python -m venv venv
@@ -44,35 +44,35 @@ pip install -r requirements.txt
 python app.py
 ```
 
-### Frontend Setup
+### **Frontend Setup**
 ```sh
 cd frontend
 npm install
 npm start
 ```
 
-### Running with Docker
+### **Running with Docker**
 ```sh
 docker-compose up --build
 ```
 
-## Data Upload Guidelines
+## **Data Upload Guidelines**
 - All seismic data should be placed in the `/data/` directory.
 - Data must be in a structured format (e.g., JSON, CSV) with required fields.
 - The system will automatically process new data upon upload.
 
-## Deployment
+## **Deployment**
 - **Local Development:** Run backend and frontend separately as described above.
 - **GitHub Deployment:** Configure GitHub Actions for CI/CD.
 - **Cloud Deployment:** Compatible with AWS, Azure, and Google Cloud.
 
-## Contributing
+## **Contributing**
 Contributions are welcome! Please follow these steps:
 1. Fork the repository.
 2. Create a feature branch (`git checkout -b feature-name`).
 3. Commit changes and push (`git push origin feature-name`).
 4. Open a Pull Request.
 
-
-## Contact
+## **Contact**
 For any issues or suggestions, feel free to open an issue or reach out!
+

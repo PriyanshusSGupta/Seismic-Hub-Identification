@@ -1,36 +1,91 @@
-# Seismic Hub Identification Data Structure
+# Seismic Hub Identification Backend
 
-This directory is intended for storing seismic datasets that users can upload for processing and analysis. Below are the guidelines and expectations for the data files.
+This document provides instructions for setting up and running the backend of the Seismic Hub Identification project. The backend is built using Flask and is responsible for handling data uploads, processing seismic datasets, and serving results to the frontend.
 
-## Expected Data Format
+## Prerequisites
 
-1. **File Types**: Users should upload datasets in CSV format. Other formats may not be supported.
+Before you begin, ensure you have the following installed:
+
+- Python 3.7 or higher
+- pip (Python package installer)
+- Docker (optional, for containerized deployment)
+
+## Installation
+
+1. **Clone the repository:**
+
+   ```bash
+   git clone https://github.com/yourusername/seismic-hub-identification.git
+   cd seismic-hub-identification/backend
+   ```
+
+2. **Install dependencies:**
+
+   You can install the required Python packages using pip. It is recommended to use a virtual environment.
+
+   ```bash
+   python -m venv venv
+   source venv/bin/activate  # On Windows use `venv\Scripts\activate`
+   pip install -r requirements.txt
+   ```
+
+## Running the Application
+
+To run the Flask application, use the following command:
+
+```bash
+export FLASK_APP=app
+export FLASK_ENV=development  # Optional: for development mode
+flask run
+```
+
+The application will start on `http://127.0.0.1:5000/` by default.
+
+## API Endpoints
+
+- **Upload Seismic Data:**
+  - `POST /upload`
+  - Description: Upload seismic datasets for processing.
   
-2. **Required Columns**:
-   - `timestamp`: The time of the seismic event (ISO 8601 format).
-   - `latitude`: Latitude of the seismic station (decimal degrees).
-   - `longitude`: Longitude of the seismic station (decimal degrees).
-   - `magnitude`: Magnitude of the seismic event (float).
-   - `depth`: Depth of the seismic event (in kilometers).
+- **Get Results:**
+  - `GET /results`
+  - Description: Retrieve processed results based on uploaded data.
 
-3. **Example Data Structure**:
-   ```
-   timestamp,latitude,longitude,magnitude,depth
-   2023-01-01T00:00:00Z,34.0522,-118.2437,5.1,10.0
-   2023-01-01T01:00:00Z,34.0522,-118.2437,4.8,12.0
-   ```
+## Data Structure
 
-## Upload Instructions
-
-- Place your CSV files in the `/data` directory.
-- Ensure that the file names are descriptive and include the date of the data (e.g., `seismic_data_2023-01-01.csv`).
-- After uploading, use the web interface to process and visualize the data.
+The backend expects seismic datasets to be uploaded in a specific format. Please refer to the `backend/data/README.md` for detailed information on the expected structure and format of the datasets.
 
 ## Error Handling
 
-If the uploaded data does not meet the required structure or contains invalid entries, appropriate error messages will be displayed in the web application. Please ensure your data adheres to the specified format to avoid processing issues.
+The backend includes error handling for various scenarios, including:
 
-## Additional Notes
+- Invalid data format
+- Missing required fields
+- Processing errors
 
-- Future enhancements may include support for additional data formats and more complex data structures.
-- For any questions or issues, please refer to the main project documentation or contact the project maintainers.
+User-friendly error messages will be returned in the API responses.
+
+## Docker Deployment
+
+To deploy the backend using Docker, you can build the Docker image with the following command:
+
+```bash
+docker build -t seismic-hub-backend .
+```
+
+Then run the container:
+
+```bash
+docker run -p 5000:5000 seismic-hub-backend
+```
+
+## Future Enhancements
+
+The backend is designed to be modular and extendable. Future enhancements may include:
+
+- Additional network algorithms for seismic data analysis
+- Integration of AI-based predictions for seismic events
+
+## License
+
+This project is licensed under the MIT License - see the [LICENSE](../LICENSE) file for details.
