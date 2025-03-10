@@ -1,91 +1,57 @@
-# Seismic Hub Identification Backend
+# **Seismic Activity Monitoring & Station Coverage Analysis**
 
-This document provides instructions for setting up and running the backend of the Seismic Hub Identification project. The backend is built using Flask and is responsible for handling data uploads, processing seismic datasets, and serving results to the frontend.
+## **Project Overview**
 
-## Prerequisites
+This project aims to map and analyze earthquakes and seismic station coverage to understand earthquake distribution, station placement efficiency, and gaps in monitoring. By visualizing seismic events and station locations, we can assess how well the current network captures earthquake activity and identify areas for improvement.
 
-Before you begin, ensure you have the following installed:
+## **Key Objectives**
 
-- Python 3.7 or higher
-- pip (Python package installer)
-- Docker (optional, for containerized deployment)
+### **1. Earthquake Data Visualization**
 
-## Installation
+- Map earthquakes based on **latitude, longitude, depth, and magnitude**.
+- Use **color and size variations** to highlight significant seismic events.
+- Enable filtering by **region, time, magnitude, and depth** for better insights.
 
-1. **Clone the repository:**
+### **2. Seismic Station Mapping**
 
-   ```bash
-   git clone https://github.com/yourusername/seismic-hub-identification.git
-   cd seismic-hub-identification/backend
-   ```
+- Overlay station locations on the earthquake map.
+- Label each station with its **name/code**.
+- Analyze **station density and coverage** in active seismic zones.
 
-2. **Install dependencies:**
+### **3. Insights & Analysis**
 
-   You can install the required Python packages using pip. It is recommended to use a virtual environment.
+- Identify **earthquake hotspots** and compare them with station locations.
+- Detect **gaps in station coverage** where monitoring improvements are needed.
+- Determine the **nearest station** to each earthquake for better response analysis.
 
-   ```bash
-   python -m venv venv
-   source venv/bin/activate  # On Windows use `venv\Scripts\activate`
-   pip install -r requirements.txt
-   ```
+## **Why This Matters?**
 
-## Running the Application
+- **Improves seismic hazard assessment** and early warning capabilities.
+- **Enhances station placement strategies** for better earthquake detection.
+- **Supports research and decision-making** in geophysics and disaster management.
 
-To run the Flask application, use the following command:
+## **Data Requirements**
 
-```bash
-export FLASK_APP=app
-export FLASK_ENV=development  # Optional: for development mode
-flask run
-```
+- **Earthquake Data:** CSV file with fields like time, latitude, longitude, depth, magnitude, and location.
+- **Seismic Station Data:** List of stations with latitude, longitude, and station names/codes.
 
-The application will start on `http://127.0.0.1:5000/` by default.
+## **Potential Features (Future Enhancements)**
 
-## API Endpoints
+- **Heatmaps** for seismic activity density visualization.
+- **Real-time updates** with live earthquake feeds.
+- **Nearest station finder** for each earthquake event.
 
-- **Upload Seismic Data:**
-  - `POST /upload`
-  - Description: Upload seismic datasets for processing.
-  
-- **Get Results:**
-  - `GET /results`
-  - Description: Retrieve processed results based on uploaded data.
+## **Next Steps**
 
-## Data Structure
+-
 
-The backend expects seismic datasets to be uploaded in a specific format. Please refer to the `backend/data/README.md` for detailed information on the expected structure and format of the datasets.
+## **Tools & Technologies**
 
-## Error Handling
+- **Programming Language:** Python
+- **Libraries:** Pandas, Matplotlib, Folium, Geopandas, Plotly
+- **Data Sources:** USGS Earthquake Data, Seismic Station Databases
 
-The backend includes error handling for various scenarios, including:
+## **Contributors**
 
-- Invalid data format
-- Missing required fields
-- Processing errors
-
-User-friendly error messages will be returned in the API responses.
-
-## Docker Deployment
-
-To deploy the backend using Docker, you can build the Docker image with the following command:
-
-```bash
-docker build -t seismic-hub-backend .
-```
-
-Then run the container:
-
-```bash
-docker run -p 5000:5000 seismic-hub-backend
-```
-
-## Future Enhancements
-
-The backend is designed to be modular and extendable. Future enhancements may include:
-
-- Additional network algorithms for seismic data analysis
-- Integration of AI-based predictions for seismic events
-
-## License
-
-This project is licensed under the MIT License - see the [LICENSE](../LICENSE) file for details.
+- **Priyanshu Gupta** *(Lead Developer)*
+- Open for collaborations and contributions!
