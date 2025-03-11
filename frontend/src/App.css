@@ -12,8 +12,8 @@ body {
 }
 
 .header {
-    background: #35424a;
-    color: #ffffff;
+    background: var(--primary-color);
+    color: var(--text-light);
     padding: 20px 0;
     text-align: center;
 }
@@ -25,7 +25,7 @@ body {
 .upload-section {
     margin: 20px 0;
     padding: 20px;
-    background: #ffffff;
+    background: var(--bg-primary);
     border-radius: 5px;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
@@ -33,17 +33,47 @@ body {
 .visualization-section {
     margin: 20px 0;
     padding: 20px;
-    background: #ffffff;
+    background: var(--bg-primary);
     border-radius: 5px;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
 
 .error-message {
-    color: red;
+    color: var(--error-color);
     font-weight: bold;
 }
 
 .success-message {
-    color: green;
+    color: var(--success-color);
     font-weight: bold;
+}
+
+/* Graph Visualization Styles */
+.graph-container svg {
+    background: var(--bg-primary);
+    border: 1px solid var(--text-secondary);
+    border-radius: 5px;
+}
+
+.node circle {
+    stroke: var(--primary-color);
+    stroke-width: 1.5px;
+}
+
+.node text {
+    fill: var(--text-primary);
+    font-size: 12px;
+}
+
+.link {
+    stroke: var(--text-secondary);
+    stroke-opacity: 0.4;
+}
+
+.tooltip {
+    background: var(--bg-primary);
+    color: var(--text-primary);
+    padding: 8px;
+    border-radius: 4px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }

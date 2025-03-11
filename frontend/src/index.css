@@ -1,12 +1,183 @@
-body {
-    margin: 0;
-    font-family: Arial, sans-serif;
-    background-color: #f4f4f4;
-    color: #333;
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+
+:root {
+  /* Primary Colors */
+  --primary-color: #2c3e50;
+  --secondary-color: #3498db;
+  --accent-color: #e74c3c;
+  
+  /* Background Colors */
+  --bg-primary: #ffffff;
+  --bg-secondary: #f4f4f4;
+  
+  /* Text Colors */
+  --text-primary: #2c3e50;
+  --text-secondary: #7f8c8d;
+  --text-light: #ffffff;
+  
+  /* Status Colors */
+  --success-color: #2ecc71;
+  --error-color: #e74c3c;
+  --warning-color: #f1c40f;
+
+  /* Typography */
+  --font-primary: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-mono: 'SFMono-Regular', Consolas, 'Liberation Mono', Menlo, monospace;
+  
+  /* Font Sizes */
+  --fs-xs: 0.75rem;    /* 12px */
+  --fs-sm: 0.875rem;   /* 14px */
+  --fs-base: 1rem;     /* 16px */
+  --fs-lg: 1.125rem;   /* 18px */
+  --fs-xl: 1.25rem;    /* 20px */
+  --fs-2xl: 1.5rem;    /* 24px */
+  --fs-3xl: 1.875rem;  /* 30px */
+  --fs-4xl: 2.25rem;   /* 36px */
+  
+  /* Line Heights */
+  --lh-none: 1;
+  --lh-tight: 1.25;
+  --lh-normal: 1.5;
+  --lh-relaxed: 1.75;
+  
+  /* Font Weights */
+  --fw-regular: 400;
+  --fw-medium: 500;
+  --fw-semibold: 600;
+  --fw-bold: 700;
+
+  /* Letter Spacing */
+  --ls-tight: -0.025em;
+  --ls-normal: 0;
+  --ls-wide: 0.025em;
 }
 
-h1, h2, h3 {
-    color: #2c3e50;
+body {
+    margin: 0;
+    font-family: var(--font-primary);
+    font-size: var(--fs-base);
+    line-height: var(--lh-normal);
+    background-color: var(--bg-secondary);
+    color: var(--text-primary);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-primary);
+    font-weight: var(--fw-bold);
+    line-height: var(--lh-tight);
+    color: var(--text-primary);
+    margin-bottom: 1rem;
+}
+
+h1 {
+    font-size: var(--fs-4xl);
+    letter-spacing: var(--ls-tight);
+}
+
+h2 {
+    font-size: var(--fs-3xl);
+}
+
+h3 {
+    font-size: var(--fs-2xl);
+}
+
+h4 {
+    font-size: var(--fs-xl);
+}
+
+p {
+    margin-bottom: 1rem;
+    line-height: var(--lh-relaxed);
+}
+
+.text-sm {
+    font-size: var(--fs-sm);
+}
+
+.text-lg {
+    font-size: var(--fs-lg);
+}
+
+.font-medium {
+    font-weight: var(--fw-medium);
+}
+
+.font-semibold {
+    font-weight: var(--fw-semibold);
+}
+
+.font-bold {
+    font-weight: var(--fw-bold);
+}
+
+.text-mono {
+    font-family: var(--font-mono);
+}
+
+a {
+    color: var(--secondary-color);
+    text-decoration: none;
+    transition: color 0.2s ease;
+}
+
+a:hover {
+    color: var(--accent-color);
+}
+
+ul, ol {
+    margin-bottom: 1rem;
+    padding-left: 1.5rem;
+}
+
+li {
+    margin-bottom: 0.5rem;
+}
+
+code, pre {
+    font-family: var(--font-mono);
+    font-size: var(--fs-sm);
+    background: var(--bg-secondary);
+    border-radius: 4px;
+}
+
+code {
+    padding: 0.2em 0.4em;
+}
+
+pre {
+    padding: 1rem;
+    overflow-x: auto;
+}
+
+.text-center {
+    text-align: center;
+}
+
+.text-right {
+    text-align: right;
+}
+
+.truncate {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.uppercase {
+    text-transform: uppercase;
+    letter-spacing: var(--ls-wide);
+}
+
+@media (max-width: 768px) {
+    :root {
+        --fs-4xl: 2rem;    /* 32px */
+        --fs-3xl: 1.75rem; /* 28px */
+        --fs-2xl: 1.375rem;/* 22px */
+        --fs-xl: 1.125rem; /* 18px */
+    }
 }
 
 .container {
@@ -16,8 +187,8 @@ h1, h2, h3 {
 }
 
 .header {
-    background: #35424a;
-    color: #ffffff;
+    background: var(--primary-color);
+    color: var(--text-light);
     padding: 10px 0;
     text-align: center;
 }
@@ -25,22 +196,23 @@ h1, h2, h3 {
 .button {
     display: inline-block;
     font-size: 16px;
-    color: #fff;
-    background: #e8491d;
+    color: var(--text-light);
+    background: var(--accent-color);
     padding: 10px 20px;
     border: none;
     border-radius: 5px;
     cursor: pointer;
+    transition: background-color 0.3s ease;
 }
 
 .button:hover {
-    background: #c0392b;
+    background: var(--secondary-color);
 }
 
 .upload-section {
     margin: 20px 0;
     padding: 20px;
-    background: #ffffff;
+    background: var(--bg-primary);
     border-radius: 5px;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
@@ -48,7 +220,17 @@ h1, h2, h3 {
 .visualization {
     margin: 20px 0;
     padding: 20px;
-    background: #ffffff;
+    background: var(--bg-primary);
     border-radius: 5px;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.error-message {
+    color: var(--error-color);
+    font-weight: bold;
+}
+
+.success-message {
+    color: var(--success-color);
+    font-weight: bold;
 }

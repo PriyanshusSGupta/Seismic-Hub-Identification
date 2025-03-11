@@ -1,0 +1,39 @@
+.card {
+  background: var(--bg-primary);
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  overflow: hidden;
+}
+
+.card-padding-normal {
+  padding: 1.5rem;
+}
+
+.card-padding-large {
+  padding: 2rem;
+}
+
+.card-padding-small {
+  padding: 1rem;
+}
+
+.card-header {
+  margin-bottom: 1rem;
+}
+
+.card-title {
+  font-size: var(--fs-xl);
+  font-weight: var(--fw-semibold);
+  color: var(--text-primary);
+  margin: 0;
+}
+
+.card-subtitle {
+  font-size: var(--fs-sm);
+  color: var(--text-secondary);
+  margin: 0.5rem 0 0;
+}
+
+.card-content {
+  color: var(--text-primary);
+}
